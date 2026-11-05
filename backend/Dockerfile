@@ -8,6 +8,8 @@ RUN sh ./mvnw -B -ntp -q package -DskipTests \
     && java -Djarmode=tools -jar target/portfolio-app-*.jar extract --layers --destination /extracted
 
 FROM eclipse-temurin:21-jre-alpine
+# Base images lag behind Alpine security fixes.
+RUN apk upgrade --no-cache
 WORKDIR /app
 COPY --from=build /extracted/dependencies/ ./
 COPY --from=build /extracted/spring-boot-loader/ ./
