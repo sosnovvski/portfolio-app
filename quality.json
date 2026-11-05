@@ -1,0 +1,34 @@
+{
+  "commit": "2fd8e1a34167d0026cda4ac3c4f50c539146e27d",
+  "runUrl": "https://github.com/sosnovvski/portfolio-app/actions/runs/42090945824",
+  "finishedAt": "2026-11-05T19:23:29Z",
+  "conclusion": "success",
+  "suites": [
+    {
+      "name": "backend",
+      "tests": 128,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "frontend",
+      "tests": 316,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "browser",
+      "tests": 69,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "accessibility": {
+    "tests": 28,
+    "failed": 0
+  },
+  "coverage": {
+    "backendLines": 93.6,
+    "frontendLines": 91.13
+  }
+}
