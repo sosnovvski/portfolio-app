@@ -1,7 +1,9 @@
 # Caddy 2.11.9 carries the go-jose fix for CVE-2026-116587, but has no official image yet.
 # When caddy:2-alpine reaches 2.11.9 or later, drop this stage and the COPY of the binary below.
 FROM caddy:2-builder-alpine AS build
-RUN xcaddy build v2.11.9 --output /caddy
+# The builder adds a file capability, which cannot start under cap_drop and no-new-privileges.
+# Compose lets the non-root user bind low ports with a sysctl instead.
+RUN xcaddy build v2.11.9 --output /caddy && setcap -r /caddy
 
 FROM caddy:2-alpine
 RUN apk upgrade --no-cache

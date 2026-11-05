@@ -16,6 +16,12 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy-data:/data
       - caddy-config:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:2019/config/ || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 5s
     networks:
       edge:
         # The backend trusts X-Forwarded-For only from this address. See TRUSTED_PROXY in the backend.
@@ -38,6 +44,13 @@ services:
     depends_on:
       backend:
         condition: service_healthy
+    healthcheck:
+      # Robots needs no backend, so a backend outage does not restart or mark down the frontend.
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/robots.txt').then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 10s
     networks:
       - edge
     read_only: true
