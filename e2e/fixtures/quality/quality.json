@@ -1,0 +1,13 @@
+{
+  "commit": "abc1234def5678",
+  "runUrl": "https://github.com/example/portfolio/actions/runs/1",
+  "finishedAt": "2026-11-01T09:00:00Z",
+  "conclusion": "failure",
+  "suites": [
+    { "name": "backend", "tests": 11, "failed": 0, "skipped": 0 },
+    { "name": "frontend", "tests": 22, "failed": 1, "skipped": 0 },
+    { "name": "browser", "tests": 33, "failed": 0, "skipped": 0 }
+  ],
+  "accessibility": { "tests": 4, "failed": 0 },
+  "coverage": { "backendLines": 91.5, "frontendLines": 82.5 }
+}

@@ -1,0 +1,1281 @@
+{
+  "openapi" : "3.1.0",
+  "info" : {
+    "title" : "Portfolio API",
+    "version" : "1"
+  },
+  "paths" : {
+    "/api/admin/credentials" : {
+      "get" : {
+        "operationId" : "credentials",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/CredentialForm"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "post" : {
+        "operationId" : "createCredential",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CredentialForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CredentialForm"
+                }
+              }
+            },
+            "description" : "Created"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/credentials/{id}" : {
+      "delete" : {
+        "operationId" : "deleteCredential",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "put" : {
+        "operationId" : "updateCredential",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CredentialForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CredentialForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/experiences" : {
+      "get" : {
+        "operationId" : "experiences",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ExperienceForm"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "post" : {
+        "operationId" : "createExperience",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ExperienceForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExperienceForm"
+                }
+              }
+            },
+            "description" : "Created"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/experiences/{id}" : {
+      "delete" : {
+        "operationId" : "deleteExperience",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "put" : {
+        "operationId" : "updateExperience",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ExperienceForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExperienceForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/messages" : {
+      "get" : {
+        "operationId" : "messages",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "page",
+          "required" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 0,
+            "minimum" : 0
+          }
+        }, {
+          "in" : "query",
+          "name" : "size",
+          "required" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 20,
+            "maximum" : 100,
+            "minimum" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MessagePage"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "contact-controller" ]
+      }
+    },
+    "/api/admin/messages/{id}" : {
+      "delete" : {
+        "operationId" : "delete",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        },
+        "tags" : [ "contact-controller" ]
+      },
+      "patch" : {
+        "operationId" : "setRead",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReadUpdate"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MessageView"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "contact-controller" ]
+      }
+    },
+    "/api/admin/profile" : {
+      "get" : {
+        "operationId" : "profile",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProfileForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "put" : {
+        "operationId" : "saveProfile",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProfileForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProfileForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/projects" : {
+      "get" : {
+        "operationId" : "projects",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ProjectForm"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "post" : {
+        "operationId" : "createProject",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProjectForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProjectForm"
+                }
+              }
+            },
+            "description" : "Created"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/projects/{id}" : {
+      "delete" : {
+        "operationId" : "deleteProject",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "put" : {
+        "operationId" : "updateProject",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProjectForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProjectForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/skill-groups" : {
+      "get" : {
+        "operationId" : "skillGroups",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/SkillGroupForm"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "post" : {
+        "operationId" : "createSkillGroup",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SkillGroupForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SkillGroupForm"
+                }
+              }
+            },
+            "description" : "Created"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/admin/skill-groups/{id}" : {
+      "delete" : {
+        "operationId" : "deleteSkillGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      },
+      "put" : {
+        "operationId" : "updateSkillGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SkillGroupForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SkillGroupForm"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "admin-content-controller" ]
+      }
+    },
+    "/api/auth/session" : {
+      "get" : {
+        "operationId" : "session",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SessionView"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "session-controller" ]
+      }
+    },
+    "/api/public/contact" : {
+      "post" : {
+        "operationId" : "submit",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ContactForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Accepted"
+          },
+          "400" : {
+            "content" : {
+              "application/problem+json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiProblem"
+                }
+              }
+            },
+            "description" : "Some fields are not valid"
+          },
+          "429" : {
+            "content" : {
+              "application/problem+json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiProblem"
+                }
+              }
+            },
+            "description" : "Too many messages. See the Retry-After header"
+          }
+        },
+        "tags" : [ "contact-controller" ]
+      }
+    },
+    "/api/public/content/{locale}" : {
+      "get" : {
+        "operationId" : "content",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "locale",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "en", "pl" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PublicContent"
+                }
+              }
+            },
+            "description" : "Published content in one language"
+          },
+          "404" : {
+            "content" : {
+              "application/problem+json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiProblem"
+                }
+              }
+            },
+            "description" : "Unsupported language, or no profile yet"
+          }
+        },
+        "tags" : [ "public-content-controller" ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AchievementForm" : {
+        "type" : "object",
+        "properties" : {
+          "textEn" : {
+            "type" : "string",
+            "maxLength" : 1000,
+            "minLength" : 0
+          },
+          "textPl" : {
+            "type" : "string",
+            "maxLength" : 1000,
+            "minLength" : 0
+          }
+        },
+        "required" : [ "textEn", "textPl" ]
+      },
+      "ApiProblem" : {
+        "type" : "object",
+        "properties" : {
+          "detail" : {
+            "type" : "string"
+          },
+          "errors" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/FieldError"
+            }
+          },
+          "instance" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "status", "title" ]
+      },
+      "ContactForm" : {
+        "type" : "object",
+        "properties" : {
+          "contactRef" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string",
+            "format" : "email",
+            "maxLength" : 254,
+            "minLength" : 0,
+            "pattern" : "^[^@\\s]+@[^@\\s]+$"
+          },
+          "locale" : {
+            "type" : "string",
+            "pattern" : "en|pl"
+          },
+          "message" : {
+            "type" : "string",
+            "maxLength" : 5000,
+            "minLength" : 10
+          },
+          "name" : {
+            "type" : "string",
+            "maxLength" : 100,
+            "minLength" : 0
+          }
+        },
+        "required" : [ "email", "locale", "message", "name" ]
+      },
+      "CredentialForm" : {
+        "type" : "object",
+        "properties" : {
+          "endYear" : {
+            "type" : "integer",
+            "format" : "int32",
+            "maximum" : 2100,
+            "minimum" : 1950
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "issuer" : {
+            "type" : "string",
+            "maxLength" : 200,
+            "minLength" : 0
+          },
+          "kind" : {
+            "type" : "string",
+            "enum" : [ "CERTIFICATION", "EDUCATION" ]
+          },
+          "sortOrder" : {
+            "type" : "integer",
+            "format" : "int32",
+            "minimum" : 0
+          },
+          "startYear" : {
+            "type" : "integer",
+            "format" : "int32",
+            "maximum" : 2100,
+            "minimum" : 1950
+          },
+          "titleEn" : {
+            "type" : "string",
+            "maxLength" : 200,
+            "minLength" : 0
+          },
+          "titlePl" : {
+            "type" : "string",
+            "maxLength" : 200,
+            "minLength" : 0
+          },
+          "url" : {
+            "type" : "string",
+            "maxLength" : 300,
+            "minLength" : 0,
+            "pattern" : "^https://\\S+$"
+          },
+          "version" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "issuer", "kind", "sortOrder", "titleEn", "titlePl" ]
+      },
+      "CredentialView" : {
+        "type" : "object",
+        "properties" : {
+          "endYear" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "issuer" : {
+            "type" : "string"
+          },
+          "kind" : {
+            "type" : "string",
+            "enum" : [ "CERTIFICATION", "EDUCATION" ]
+          },
+          "startYear" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "issuer", "kind", "title" ]
+      },
+      "ExperienceForm" : {
+        "type" : "object",
+        "properties" : {
+          "achievements" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/AchievementForm"
+            },
+            "maxItems" : 50,
+            "minItems" : 0
+          },
+          "client" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "employer" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "end" : {
+            "type" : "string",
+            "pattern" : "^\\d{4}-(0[1-9]|1[0-2])$"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "locationEn" : {
+            "type" : "string",
+            "maxLength" : 120,
+            "minLength" : 0
+          },
+          "locationPl" : {
+            "type" : "string",
+            "maxLength" : 120,
+            "minLength" : 0
+          },
+          "published" : {
+            "type" : "boolean"
+          },
+          "roleEn" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "rolePl" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "start" : {
+            "type" : "string",
+            "pattern" : "^\\d{4}-(0[1-9]|1[0-2])$"
+          },
+          "version" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "achievements", "employer", "published", "roleEn", "rolePl", "start" ]
+      },
+      "ExperienceView" : {
+        "type" : "object",
+        "properties" : {
+          "achievements" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "client" : {
+            "type" : "string"
+          },
+          "employer" : {
+            "type" : "string"
+          },
+          "end" : {
+            "type" : "string",
+            "description" : "Null for the current role",
+            "pattern" : "^\\d{4}-\\d{2}$"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string"
+          },
+          "start" : {
+            "type" : "string",
+            "example" : "2021-04",
+            "pattern" : "^\\d{4}-\\d{2}$"
+          }
+        },
+        "required" : [ "achievements", "employer", "id", "role", "start" ]
+      },
+      "FieldError" : {
+        "type" : "object",
+        "properties" : {
+          "field" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "field", "message" ]
+      },
+      "MessagePage" : {
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MessageView"
+            }
+          },
+          "page" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "size" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "total" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "items", "page", "size", "total" ]
+      },
+      "MessageView" : {
+        "type" : "object",
+        "properties" : {
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "readAt" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        },
+        "required" : [ "createdAt", "email", "id", "locale", "message", "name" ]
+      },
+      "ProfileForm" : {
+        "type" : "object",
+        "properties" : {
+          "fullName" : {
+            "type" : "string",
+            "maxLength" : 120,
+            "minLength" : 0
+          },
+          "githubUrl" : {
+            "type" : "string",
+            "maxLength" : 300,
+            "minLength" : 0,
+            "pattern" : "^https://\\S+$"
+          },
+          "headlineEn" : {
+            "type" : "string",
+            "maxLength" : 200,
+            "minLength" : 0
+          },
+          "headlinePl" : {
+            "type" : "string",
+            "maxLength" : 200,
+            "minLength" : 0
+          },
+          "linkedinUrl" : {
+            "type" : "string",
+            "maxLength" : 300,
+            "minLength" : 0,
+            "pattern" : "^https://\\S+$"
+          },
+          "locationEn" : {
+            "type" : "string",
+            "maxLength" : 120,
+            "minLength" : 0
+          },
+          "locationPl" : {
+            "type" : "string",
+            "maxLength" : 120,
+            "minLength" : 0
+          },
+          "publicEmail" : {
+            "type" : "string",
+            "format" : "email",
+            "maxLength" : 254,
+            "minLength" : 0,
+            "pattern" : "^[^@\\s]+@[^@\\s]+$"
+          },
+          "summaryEn" : {
+            "type" : "string",
+            "maxLength" : 10000,
+            "minLength" : 0
+          },
+          "summaryPl" : {
+            "type" : "string",
+            "maxLength" : 10000,
+            "minLength" : 0
+          },
+          "version" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "fullName", "headlineEn", "headlinePl", "locationEn", "locationPl", "summaryEn", "summaryPl" ]
+      },
+      "ProfileView" : {
+        "type" : "object",
+        "properties" : {
+          "fullName" : {
+            "type" : "string"
+          },
+          "githubUrl" : {
+            "type" : "string"
+          },
+          "headline" : {
+            "type" : "string"
+          },
+          "linkedinUrl" : {
+            "type" : "string"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "publicEmail" : {
+            "type" : "string"
+          },
+          "summary" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "fullName", "headline", "location", "summary" ]
+      },
+      "ProjectForm" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "liveUrl" : {
+            "type" : "string",
+            "maxLength" : 300,
+            "minLength" : 0,
+            "pattern" : "^https://\\S+$"
+          },
+          "nameEn" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "namePl" : {
+            "type" : "string",
+            "maxLength" : 150,
+            "minLength" : 0
+          },
+          "published" : {
+            "type" : "boolean"
+          },
+          "repoUrl" : {
+            "type" : "string",
+            "maxLength" : 300,
+            "minLength" : 0,
+            "pattern" : "^https://\\S+$"
+          },
+          "slug" : {
+            "type" : "string",
+            "maxLength" : 100,
+            "minLength" : 0,
+            "pattern" : "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "sortOrder" : {
+            "type" : "integer",
+            "format" : "int32",
+            "minimum" : 0
+          },
+          "status" : {
+            "type" : "string",
+            "enum" : [ "PLANNED", "IN_DEVELOPMENT", "LIVE" ]
+          },
+          "summaryEn" : {
+            "type" : "string",
+            "maxLength" : 10000,
+            "minLength" : 0
+          },
+          "summaryPl" : {
+            "type" : "string",
+            "maxLength" : 10000,
+            "minLength" : 0
+          },
+          "tech" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "maxLength" : 60,
+              "minLength" : 0
+            },
+            "maxItems" : 30,
+            "minItems" : 0
+          },
+          "version" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "nameEn", "namePl", "published", "slug", "sortOrder", "status", "summaryEn", "summaryPl", "tech" ]
+      },
+      "ProjectView" : {
+        "type" : "object",
+        "properties" : {
+          "liveUrl" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "repoUrl" : {
+            "type" : "string"
+          },
+          "slug" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string",
+            "enum" : [ "PLANNED", "IN_DEVELOPMENT", "LIVE" ]
+          },
+          "summary" : {
+            "type" : "string"
+          },
+          "tech" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "required" : [ "name", "slug", "status", "summary", "tech" ]
+      },
+      "PublicContent" : {
+        "type" : "object",
+        "properties" : {
+          "credentials" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CredentialView"
+            }
+          },
+          "experiences" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ExperienceView"
+            }
+          },
+          "profile" : {
+            "$ref" : "#/components/schemas/ProfileView"
+          },
+          "projects" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ProjectView"
+            }
+          },
+          "skillGroups" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SkillGroupView"
+            }
+          }
+        },
+        "required" : [ "credentials", "experiences", "profile", "projects", "skillGroups" ]
+      },
+      "ReadUpdate" : {
+        "type" : "object",
+        "properties" : {
+          "read" : {
+            "type" : "boolean"
+          }
+        },
+        "required" : [ "read" ]
+      },
+      "SessionView" : {
+        "type" : "object",
+        "properties" : {
+          "authenticated" : {
+            "type" : "boolean"
+          }
+        },
+        "required" : [ "authenticated" ]
+      },
+      "SkillGroupForm" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "nameEn" : {
+            "type" : "string",
+            "maxLength" : 100,
+            "minLength" : 0
+          },
+          "namePl" : {
+            "type" : "string",
+            "maxLength" : 100,
+            "minLength" : 0
+          },
+          "skills" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "maxLength" : 100,
+              "minLength" : 0
+            },
+            "maxItems" : 100,
+            "minItems" : 0
+          },
+          "sortOrder" : {
+            "type" : "integer",
+            "format" : "int32",
+            "minimum" : 0
+          },
+          "version" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "required" : [ "nameEn", "namePl", "skills", "sortOrder" ]
+      },
+      "SkillGroupView" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "skills" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "required" : [ "name", "skills" ]
+      }
+    }
+  }
+}

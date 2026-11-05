@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kamil Sosnowski, design mockup</title>
+<!-- Mockup only. The real site self-hosts these fonts through next/font. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;600&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap&subset=latin-ext">
+<style>
+:root {
+  --bg: #0F2229;
+  --surface: #17303A;
+  --line: #2F505C;
+  --text: #EFEADF;
+  --muted: #A9B8BA;
+  --pass: #7FE0B0;
+  --running: #F2B84B;
+  --link: #A9C1FF;
+  --fail: #FF9C8F;
+  --sans: "Schibsted Grotesk", system-ui, sans-serif;
+  --mono: "Martian Mono", ui-monospace, monospace;
+  --gutter: 11rem;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 1.0625rem/1.6 var(--sans); }
+a { color: var(--link); text-underline-offset: .2em; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--link); outline-offset: 2px;
+}
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: .5rem 1rem; }
+
+.mono { font-family: var(--mono); font-size: .75rem; line-height: 1.5; }
+.pass { color: var(--pass); }
+.running { color: var(--running); }
+.fail { color: var(--fail); }
+.muted { color: var(--muted); }
+
+/* Header */
+.top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.25rem 0; }
+.top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.top a { color: var(--text); text-decoration: none; padding: .25rem 0; }
+.top a:hover { text-decoration: underline; }
+.top .lang a[aria-current] { font-weight: 700; text-decoration: underline; }
+.lang { display: flex; gap: .75rem; }
+
+/* Hero */
+.hero { padding: 2rem 0 4rem; }
+h1 { font-weight: 800; font-size: clamp(3rem, 14vw, 7rem); line-height: .92; letter-spacing: -.035em; margin: 0; }
+.headline { font-size: clamp(1.25rem, 2.4vw, 1.75rem); line-height: 1.3; margin: 1.5rem 0 .25rem; max-width: 40rem; }
+
+/* Run timeline: the one memorable element */
+.run { margin-top: 2rem; }
+.run h2 { font-size: 1.375rem; font-weight: 700; margin: 0 0 .25rem; letter-spacing: 0; }
+.run-sum { color: var(--muted); margin: 0 0 1.25rem; }
+.axis, .row { display: grid; grid-template-columns: minmax(0, 24rem) 1fr; gap: 1.5rem; align-items: center; }
+.ticks { display: grid; grid-template-columns: repeat(5, 1fr); color: var(--muted); }
+.row { padding: .5rem 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
+.row:hover .who strong { text-decoration: underline; }
+.who strong { display: block; font-weight: 500; }
+.who span { color: var(--muted); font-size: .9375rem; }
+.who .org { color: var(--text); }
+.timeline { list-style: none; margin: 0; padding: 0; }
+.track { height: 1.25rem; width: 100%; display: block;
+  background: repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px 20%); }
+.track rect { transform-box: fill-box; transform-origin: left; animation: grow .5s cubic-bezier(.2,.7,.2,1) backwards; }
+.timeline li:nth-child(1) rect { animation-delay: 840ms; }
+.timeline li:nth-child(2) rect { animation-delay: 720ms; }
+.timeline li:nth-child(3) rect { animation-delay: 600ms; }
+.timeline li:nth-child(4) rect { animation-delay: 480ms; }
+.timeline li:nth-child(5) rect { animation-delay: 360ms; }
+.timeline li:nth-child(6) rect { animation-delay: 240ms; }
+.timeline li:nth-child(7) rect { animation-delay: 120ms; }
+.timeline li:nth-child(8) rect { animation-delay: 0ms; }
+@keyframes grow { from { transform: scaleX(0); } }
+.legend { color: var(--muted); margin-top: 1rem; font-size: .9375rem; border-top: 1px solid var(--line); padding-top: .75rem; }
+
+/* Sections */
+section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.1; letter-spacing: -.02em; font-weight: 700; margin: 0 0 2rem; }
+.summary { max-width: 42rem; font-size: 1.1875rem; }
+.summary ul { padding-left: 1.25rem; margin: .5rem 0 1rem; }
+
+/* Suites */
+.key { color: var(--muted); margin: -1.25rem 0 2rem; }
+.suite { display: grid; grid-template-columns: var(--gutter) minmax(0, 44rem); gap: 0 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+.suite:first-of-type { border-top: 0; padding-top: 0; }
+.suite > * { grid-column: 2; }
+.suite > .status { grid-column: 1; grid-row: 1 / span 3; font-size: .9375rem; line-height: 1.4; }
+.status .mono { display: block; margin-bottom: .25rem; }
+.status .len { color: var(--muted); display: block; }
+.suite h3 { font-size: 1.375rem; line-height: 1.25; font-weight: 700; margin: 0; }
+.suite .meta { color: var(--muted); margin: .25rem 0 .75rem; }
+.suite .meta:empty { display: none; }
+.asserts { list-style: none; margin: 0; padding: 0; }
+.asserts li { position: relative; padding-left: 1.5rem; }
+.asserts li::before { content: "\2713"; position: absolute; left: 0; color: var(--pass); }
+
+/* Scroll reveal: hidden state exists only when the script enabled it */
+#experience { overflow-x: clip; }
+.reveal #experience .suite { opacity: 0; transform: translateX(6rem); transition: opacity .5s ease-out, transform .6s cubic-bezier(.2,.7,.2,1); }
+.reveal #experience .suite.in { opacity: 1; transform: none; }
+
+/* Skills and credentials */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+.cols h3 { font-size: 1.0625rem; font-weight: 700; margin: 0 0 .25rem; }
+.cols p, .cols ul { margin: 0 0 1.25rem; }
+.cols ul { padding-left: 1.25rem; }
+
+/* CI section */
+.ci { background: var(--surface); padding: 1.5rem; max-width: 44rem; }
+.ci dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1.5rem; margin: 1rem 0 0; }
+.ci dt { color: var(--muted); }
+.ci dd { margin: 0; }
+.sample { color: var(--running); margin: 0 0 .75rem; font-size: .9375rem; }
+
+/* Contact */
+.err { color: var(--fail); font-size: .9375rem; }
+form { display: grid; gap: 1rem; max-width: 34rem; }
+label { display: grid; gap: .25rem; font-weight: 500; }
+input, textarea { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--muted); padding: .625rem .75rem; border-radius: 2px; }
+button { justify-self: start; font: 700 1rem var(--sans); color: var(--bg); background: var(--pass); border: 0; padding: .75rem 1.25rem; border-radius: 2px; cursor: pointer; min-height: 44px; }
+footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  .axis { grid-template-columns: 1fr; }
+  .axis > :first-child { display: none; }
+  .row { grid-template-columns: 1fr; gap: .375rem; }
+  .suite { grid-template-columns: 1fr; }
+  .suite > * { grid-column: 1; }
+  .suite > .status { grid-row: 1; margin-bottom: .5rem; }
+  .cols { grid-template-columns: 1fr; gap: 0; }
+  .hero { padding-top: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .track rect { animation: none; }
+}
+@media print {
+  :root { --bg: #fff; --text: #000; --muted: #333; --line: #bbb; --pass: #05603a; --running: #7a4b00; --link: #000; --surface: #fff; }
+  .top, .run, #ci, form { display: none; }
+  .reveal #experience .suite { opacity: 1; transform: none; transition: none; }
+  .track rect { animation: none; }
+}
+</style>
+<script>
+if (matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('reveal');
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#experience">Skip to experience</a>
+<div class="wrap">
+
+<header class="top">
+  <nav aria-label="Sections">
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="lang">
+    <a href="#" aria-current="page" hreflang="en" lang="en">English</a>
+    <a href="#" hreflang="pl" lang="pl">Polski</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <h1>Kamil<br>Sosnowski</h1>
+  <p class="headline">Senior QA Automation / Software Engineer / Test Lead. I build test frameworks that teams can trust at release time.</p>
+  <p class="muted">Gdańsk, Poland</p>
+
+  <div class="run">
+    <h2>Career run, 2017 to today</h2>
+    <p class="run-sum">8 roles across 7 workplaces, one current.</p>
+    <div class="timeline">
+      <div class="axis" aria-hidden="true"><span></span>
+        <div class="ticks mono"><span>2017</span><span>2019</span><span>2021</span><span>2023</span><span>2025</span></div>
+      </div>
+      <!-- Axis: 120 months from Jan 2017. Bars use SVG geometry, so the strict CSP needs no style attribute. -->
+      <ol class="timeline" role="list">
+        <li><a class="row" href="#self"><div class="who"><strong>Senior Test Automation Engineer</strong><span><span class="org">Self-employed</span>, Jan 2022 <b class="running">to present</b></span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="60" y="1" width="59" height="8" fill="#F2B84B"/></svg></a></li>
+        <li><a class="row" href="#epam-lead"><div class="who"><strong>Software QA Team Lead</strong><span><span class="org">EPAM Systems</span>, Apr 2021 to Jan 2022</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="51" y="1" width="10" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#epam-engineer"><div class="who"><strong>Test Automation Engineer</strong><span><span class="org">EPAM Systems</span>, Feb 2021 to Apr 2021</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="49" y="1" width="3" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#alten"><div class="who"><strong>Software Validation Engineer</strong><span><span class="org">ALTEN</span> at Thales, Jun 2020 to Feb 2021</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="41" y="1" width="9" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#jit"><div class="who"><strong>Test Automation Engineer</strong><span><span class="org">Jit Team</span> at LPP, Jun 2019 to May 2020</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="29" y="1" width="12" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#develocraft"><div class="who"><strong>Test Automation Engineer</strong><span><span class="org">Develocraft</span> at Partner CRLS, Jan 2019 to Jun 2019</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="24" y="1" width="6" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#aplitt"><div class="who"><strong>Junior Tester</strong><span><span class="org">Aplitt</span>, Feb 2018 to Dec 2018</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="13" y="1" width="11" height="8" fill="#7FE0B0"/></svg></a></li>
+        <li><a class="row" href="#jabil"><div class="who"><strong>Junior Test Engineer, internship</strong><span><span class="org">Jabil</span>, Jul 2017 to Sep 2017</span></div>
+          <svg class="track" viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><rect x="6" y="1" width="3" height="8" fill="#7FE0B0"/></svg></a></li>
+      </ol>
+    </div>
+    <p class="legend">Each bar shows when the role took place. Green: finished. Amber: current.</p>
+  </div>
+</div>
+
+<section id="about" aria-labelledby="about-h">
+  <h2 id="about-h">Summary</h2>
+  <div class="summary">
+    <p>Senior test automation engineer who builds scalable automation frameworks for web and API applications, using Java, Selenium WebDriver and REST Assured, with tests running inside CI/CD pipelines. I care about maintainable test architecture, clean code and long-term quality strategy.</p>
+    <p>My work helps teams:</p>
+    <ul>
+      <li>reduce regression time</li>
+      <li>increase deployment confidence</li>
+      <li>improve overall product stability</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="exp-h">
+  <h2 id="exp-h">Experience</h2>
+  <p class="key">PASS: role finished. RUNNING: current role.</p>
+
+  <article class="suite" id="self">
+    <h3>Senior Test Automation Engineer, Self-employed</h3>
+    <div class="status"><span class="mono running">RUNNING</span>Jan 2022 to present<span class="len">4 yrs 11 mos</span></div>
+    <p class="meta"></p>
+  </article>
+
+  <article class="suite" id="epam-lead">
+    <h3>Software QA Team Lead, EPAM Systems</h3>
+    <div class="status"><span class="mono pass">PASS</span>Apr 2021 to Jan 2022<span class="len">10 mos</span></div>
+    <p class="meta">Gdańsk</p>
+  </article>
+
+  <article class="suite" id="epam-engineer">
+    <h3>Test Automation Engineer, EPAM Systems</h3>
+    <div class="status"><span class="mono pass">PASS</span>Feb 2021 to Apr 2021<span class="len">3 mos</span></div>
+    <p class="meta">Gdańsk</p>
+  </article>
+
+  <article class="suite" id="alten">
+    <h3>Software Validation Engineer, ALTEN</h3>
+    <div class="status"><span class="mono pass">PASS</span>Jun 2020 to Feb 2021<span class="len">9 mos</span></div>
+    <p class="meta">Client: Thales. Gdańsk</p>
+    <ul class="asserts">
+      <li>Automated testing processes, then refactored and maintained existing tests</li>
+      <li>Performed code reviews</li>
+      <li>Reported bugs, ran retests and wrote test cases</li>
+    </ul>
+  </article>
+
+  <article class="suite" id="jit">
+    <h3>Test Automation Engineer, Jit Team</h3>
+    <div class="status"><span class="mono pass">PASS</span>Jun 2019 to May 2020<span class="len">1 yr</span></div>
+    <p class="meta">Client: LPP. Gdańsk area</p>
+    <ul class="asserts">
+      <li>Built solutions for fetching test data from data tables</li>
+      <li>Created Jenkins pipelines and performed code reviews</li>
+      <li>Automated, refactored and maintained tests</li>
+      <li>Ran smoke tests and retests, wrote test cases and scenarios</li>
+    </ul>
+  </article>
+
+  <article class="suite" id="develocraft">
+    <h3>Test Automation Engineer, Develocraft</h3>
+    <div class="status"><span class="mono pass">PASS</span>Jan 2019 to Jun 2019<span class="len">6 mos</span></div>
+    <p class="meta">Client: Partner CRLS. Gdańsk</p>
+    <ul class="asserts">
+      <li>Created a test plan from scratch</li>
+      <li>Covered most of the application with automated tests, using Java and Selenium with Page Object Model and Page Factory</li>
+      <li>Optimised automated tests around the main use case of the project</li>
+      <li>Worked with Jenkins for automated tests</li>
+      <li>Ran smoke and acceptance tests</li>
+    </ul>
+  </article>
+
+  <article class="suite" id="aplitt">
+    <h3>Junior Tester, Aplitt</h3>
+    <div class="status"><span class="mono pass">PASS</span>Feb 2018 to Dec 2018<span class="len">11 mos</span></div>
+    <p class="meta">Gdańsk</p>
+    <ul class="asserts">
+      <li>Wrote automated web tests with Java, Maven and Selenium</li>
+      <li>Wrote automated mobile tests with Java, Maven and Appium</li>
+      <li>Wrote scripts to test an MSSQL database after migration</li>
+      <li>Ran performance and integration tests, and acceptance tests with the client</li>
+      <li>Created test cases</li>
+    </ul>
+  </article>
+
+  <article class="suite" id="jabil">
+    <h3>Junior Test Engineer, internship, Jabil</h3>
+    <div class="status"><span class="mono pass">PASS</span>Jul 2017 to Sep 2017<span class="len">3 mos</span></div>
+    <p class="meta"></p>
+    <ul class="asserts">
+      <li>Worked with AOI, FCT and HVT testers</li>
+      <li>Created and maintained scripts using JabilTest</li>
+      <li>Wrote a C# application to support test engineers</li>
+      <li>Soldered components on PCBs</li>
+    </ul>
+  </article>
+</section>
+
+<section id="skills" aria-labelledby="skills-h">
+  <h2 id="skills-h">Skills and credentials</h2>
+  <div class="cols">
+    <div>
+      <h3>Test automation</h3><p>Java, Selenium WebDriver, Selenide, REST Assured, Appium, Page Object Model</p>
+      <h3>CI/CD</h3><p>Jenkins, Azure Pipelines</p>
+      <h3>Build tools</h3><p>Maven, Gradle</p>
+    </div>
+    <div>
+      <h3>Certifications, LinkedIn Learning, 2021</h3>
+      <ul>
+        <li>End-to-End JavaScript Testing with Cypress.io</li>
+        <li>DevOps Foundations: Continuous Delivery/Continuous Integration</li>
+        <li>Advanced Selenium: 3 Synchronization Strategies</li>
+      </ul>
+      <h3>Education</h3>
+      <p>Engineer's degree, Electronics and Telecommunications<br>Gdynia Maritime University, 2014 to 2018</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" aria-labelledby="projects-h">
+  <h2 id="projects-h">Projects</h2>
+  <article class="suite">
+    <h3>This portfolio</h3>
+    <div class="status"><span class="mono running">RUNNING</span>In development</div>
+    <p class="meta">Spring Boot, PostgreSQL, Next.js, Playwright</p>
+    <p>The site you are reading, with its own test suite and CI checks. New apps appear here as they ship.</p>
+  </article>
+</section>
+
+<section id="ci" aria-labelledby="ci-h">
+  <h2 id="ci-h">Latest automated test run of this website</h2>
+  <div class="ci">
+    <p class="sample">Sample layout. The live site shows real CI results only and hides this section when they are unavailable.</p>
+    <p class="mono pass">PASS</p>
+    <dl>
+      <dt>Run</dt><dd><a href="#">5 Nov 2026, commit abc1234</a></dd>
+      <dt>Tests</dt><dd>000 passed, 0 failed</dd>
+      <dt>Accessibility</dt><dd>0 violations</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <p>Write through the form or find me on <a href="https://www.linkedin.com/in/kamil-sosnowski-tester/">LinkedIn</a>.</p>
+  <form onsubmit="return false">
+    <p class="muted">All fields are required.</p>
+    <label>Name <input name="name" autocomplete="name" required></label>
+    <label>Email <input name="email" type="email" autocomplete="email" required></label>
+    <label>Message <textarea name="message" rows="5" required></textarea></label>
+    <p class="muted">Your message is stored for up to 12 months so I can reply. <a href="#">Privacy notice</a></p>
+    <button type="submit">Send message</button>
+  </form>
+</section>
+</main>
+
+<footer>
+  <span>Kamil Sosnowski</span>
+  <a href="https://www.linkedin.com/in/kamil-sosnowski-tester/">LinkedIn</a>
+  <a href="#">Privacy notice</a>
+</footer>
+</div>
+<script>
+if (document.documentElement.classList.contains('reveal')) {
+  const io = new IntersectionObserver((entries) => {
+    let i = 0;
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      e.target.style.transitionDelay = (i++ * 120) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('#experience .suite').forEach((a) => io.observe(a));
+}
+</script>
+</body>
+</html>

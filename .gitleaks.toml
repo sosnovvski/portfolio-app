@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test-only credentials that protect nothing real"
+paths = [
+  '''backend/src/test/resources/application-test\.properties''',
+  '''backend/src/test/java/org/omnie/portfolioapp/security/AdminPropertiesTest\.java''',
+  '''e2e/e2e\.env''',
+]

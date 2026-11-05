@@ -1,0 +1,19 @@
+# Isolated stack for browser tests: fictional content, test credentials, nothing persisted.
+#   docker compose --env-file e2e/e2e.env -f compose.yaml -f compose.e2e.yaml -p portfolio-e2e up -d --build --wait
+services:
+  backend:
+    volumes:
+      - ./e2e/fixtures:/seed:ro
+
+  frontend:
+    environment:
+      QUALITY_JSON_URL: http://quality/quality.json
+
+  # Stands in for the published report. The fixture is a failed run, to prove a failure shows as one.
+  quality:
+    image: caddy:2-alpine
+    command: caddy file-server --root /srv --listen :80
+    volumes:
+      - ./e2e/fixtures/quality:/srv:ro
+    networks:
+      - edge

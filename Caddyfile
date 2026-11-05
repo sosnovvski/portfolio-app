@@ -1,0 +1,54 @@
+(unavailable) {
+	header Retry-After "120"
+	header Cache-Control "no-store"
+	root * /srv/errors
+	rewrite * /unavailable.html
+	file_server {
+		status 503
+	}
+}
+
+# The only public entry point. Access logs stay off, so visitor addresses are not recorded.
+{$SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	@tls protocol https
+	header @tls Strict-Transport-Security "max-age=31536000"
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+		-Server
+	}
+
+	handle /api/public/contact {
+		request_body {
+			max_size 32KB
+		}
+		reverse_proxy backend:8080
+	}
+
+	# Actuator and API docs are not under /api, so they are never routed to the backend.
+	handle /api/* {
+		request_body {
+			max_size 1MB
+		}
+		reverse_proxy backend:8080
+	}
+
+	handle {
+		reverse_proxy frontend:3000 {
+			# Next.js cannot render its error page without JavaScript, so a failed page gets a static one.
+			@failed status 5xx
+			handle_response @failed {
+				import unavailable
+			}
+		}
+	}
+
+	# The frontend container itself is down.
+	handle_errors 502 503 504 {
+		import unavailable
+	}
+}

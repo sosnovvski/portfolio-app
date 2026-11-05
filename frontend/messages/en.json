@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "sections": "Sections",
+    "language": "Language",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "home": "Home",
+    "skipToExperience": "Skip to experience",
+    "skipToMain": "Skip to main content"
+  },
+  "dates": {
+    "to": "to",
+    "present": "present",
+    "toPresent": "to present"
+  },
+  "duration": {
+    "years": "{count, plural, one {# year} other {# years}}",
+    "months": "{count, plural, one {# month} other {# months}}"
+  },
+  "timeline": {
+    "heading": "Career run, {year} to today",
+    "counts": "{roles} across {workplaces}, {current}.",
+    "roles": "{count, plural, one {# role} other {# roles}}",
+    "workplaces": "{count, plural, one {# workplace} other {# workplaces}}",
+    "current": "{count, plural, =0 {none current} =1 {one current} other {# current}}",
+    "employerAtClient": "<org>{employer}</org> at {client}",
+    "legend": "Each bar shows when the role took place. Green: finished. Amber: current."
+  },
+  "summary": {
+    "heading": "Summary"
+  },
+  "experience": {
+    "heading": "Experience",
+    "key": "<term>PASS</term>: role finished. <term>RUNNING</term>: current role.",
+    "client": "Client: {client}"
+  },
+  "skills": {
+    "heading": "Skills and credentials",
+    "certifications": "Certifications",
+    "education": "Education"
+  },
+  "projects": {
+    "heading": "Projects",
+    "planned": "Planned",
+    "inDevelopment": "In development",
+    "live": "Live",
+    "repo": "Source code for {name}",
+    "site": "Live site for {name}"
+  },
+  "quality": {
+    "heading": "How this site is tested",
+    "statusPass": "Nothing failed in this run.",
+    "statusFail": "This run found a problem. The full run shows the details.",
+    "suites": {
+      "backend": "Backend tests",
+      "frontend": "Frontend tests",
+      "browser": "Browser tests"
+    },
+    "accessibility": "Accessibility tests",
+    "passed": "{count, plural, other {# passed}}",
+    "failed": "{count, plural, other {# failed}}",
+    "skipped": "{count, plural, other {# skipped}}",
+    "coverageBackend": "Backend line coverage",
+    "coverageFrontend": "Frontend line coverage",
+    "date": "Date",
+    "oldRun": "This result is from an older run.",
+    "intro": "Every change to this site runs through automated tests. These are the latest results.",
+    "statusOtherCheck": "All tests passed, but another automated check failed.",
+    "fullRun": "Full run",
+    "runLink": "View run {commit} on GitHub"
+  },
+  "contact": {
+    "heading": "Contact",
+    "intro": "Use the form below.",
+    "introLinkedin": "Use the form below, or find me on <link>LinkedIn</link>.",
+    "email": "You can also email me at <link>{email}</link>.",
+    "allRequired": "All fields are required.",
+    "name": "Name",
+    "emailLabel": "Email",
+    "message": "Message",
+    "honeypot": "Reference",
+    "retention": "Your message is stored for up to 12 months so I can reply. <link>Privacy notice</link>",
+    "send": "Send message",
+    "sending": "Sending",
+    "sent": "Message sent",
+    "noscript": "This form needs JavaScript, which is turned off in your browser. Turn it on to send a message.",
+    "errors": {
+      "nameRequired": "Enter your name.",
+      "nameTooLong": "Use 100 characters or fewer for your name.",
+      "nameRejected": "The server did not accept this name. Check it and try again.",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter an email address in the form name@example.com.",
+      "emailTooLong": "Use 254 characters or fewer for your email address.",
+      "emailRejected": "The server did not accept this email address. Check it and try again.",
+      "messageRequired": "Enter your message.",
+      "messageTooShort": "Write at least 10 characters.",
+      "messageTooLong": "Use 5000 characters or fewer. Your message has {count}.",
+      "messageRejected": "The server did not accept this message. Check it and try again."
+    },
+    "failure": {
+      "rateLimitedWait": "Too many messages have been sent. Your message was not sent. Try again in {wait}.",
+      "rateLimited": "Too many messages have been sent. Your message was not sent. Try again later.",
+      "seconds": "{count, plural, one {# second} other {# seconds}}",
+      "minutes": "{count, plural, one {# minute} other {# minutes}}",
+      "hours": "{count, plural, one {# hour} other {# hours}}",
+      "network": "Your message was not sent because the connection failed. Your text is still here. Check your connection and try again.",
+      "server": "Your message was not sent because of a problem on the server. Your text is still here. Try again in a few minutes."
+    }
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "privacy": "Privacy notice"
+  },
+  "privacy": {
+    "title": "Privacy notice",
+    "description": "How messages sent through the contact form on this site are handled.",
+    "intro": "This notice explains what happens to your data when you use the contact form on this site. It is given under Article 13 of the GDPR.",
+    "controllerHeading": "Who is responsible",
+    "controller": "The data controller is {name}.",
+    "contactEmail": "For privacy questions, email <link>{email}</link>.",
+    "contactGap": "A contact email address for privacy questions has not been published yet.",
+    "contactGapLinkedin": "A contact email address for privacy questions has not been published yet. Until it is, you can reach the controller on <link>LinkedIn</link>.",
+    "purposeHeading": "Why your data is used",
+    "purpose": "Your data is used only to read and reply to your enquiry.",
+    "basisHeading": "Legal basis",
+    "basis": "The legal basis is Article 6(1)(f) of the GDPR: the legitimate interest in answering people who get in touch.",
+    "voluntary": "Giving your data is voluntary, but without it the form cannot be sent and you cannot get a reply.",
+    "storedHeading": "What is stored",
+    "stored": "Your name, email address and message, the language of the page, and the time you sent the message.",
+    "notIp": "Your IP address is not stored with the message. It is only held briefly in memory to limit repeated sending.",
+    "retentionHeading": "How long it is kept",
+    "retention": "Messages are deleted after 12 months.",
+    "rightsHeading": "Your rights",
+    "rights": "You can ask for access to your data, and for it to be corrected, deleted or restricted. You can also object to its use. There is no automated decision-making or profiling.",
+    "complaint": "You have the right to complain to the Polish data protection authority, the President of the Personal Data Protection Office (<link>PUODO</link>).",
+    "cookiesHeading": "Cookies",
+    "cookies": "This site sets no cookies for visitors and uses no analytics."
+  },
+  "metadata": {
+    "unavailableTitle": "Temporarily unavailable"
+  },
+  "error": {
+    "title": "This page is temporarily unavailable",
+    "body": "The site could not load its content. Nothing is wrong on your side. Try again in a few minutes.",
+    "retry": "Try again"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "There is no page at this address.",
+    "home": "Go to the home page"
+  }
+}

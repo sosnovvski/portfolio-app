@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "fullName": "Test Person",
+    "headlineEn": "Fixture headline in English",
+    "headlinePl": "Testowy nagłówek po polsku",
+    "summaryEn": "First fixture paragraph.\n\nSecond fixture paragraph.",
+    "summaryPl": "Pierwszy akapit testowy.\n\nDrugi akapit testowy.",
+    "locationEn": "Testville, Poland",
+    "locationPl": "Gdańsk",
+    "linkedinUrl": "https://example.test/in/test-person",
+    "githubUrl": null,
+    "publicEmail": "person@example.test"
+  },
+  "experiences": [
+    {
+      "employer": "Current Fixture Co",
+      "roleEn": "Lead Fixture Engineer",
+      "rolePl": "Główny inżynier testowy",
+      "start": "2022-01",
+      "end": null,
+      "published": true,
+      "achievements": []
+    },
+    {
+      "employer": "Older Fixture Co",
+      "client": "Fixture Client",
+      "roleEn": "Fixture Engineer",
+      "rolePl": "Inżynier testowy",
+      "locationEn": "Testville, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2021-04",
+      "end": "2022-01",
+      "published": true,
+      "achievements": [
+        { "textEn": "Wrote fixture tests", "textPl": "Pisanie testów" }
+      ]
+    },
+    {
+      "employer": "Hidden Fixture Co",
+      "roleEn": "Unpublished role",
+      "rolePl": "Rola nieopublikowana",
+      "start": "2019-01",
+      "end": "2019-06",
+      "published": false,
+      "achievements": []
+    }
+  ],
+  "skillGroups": [
+    { "nameEn": "Fixture skills", "namePl": "Umiejętności testowe", "sortOrder": 0, "skills": ["Alpha", "Beta"] }
+  ],
+  "credentials": [
+    {
+      "kind": "CERTIFICATION",
+      "titleEn": "Fixture certificate",
+      "titlePl": "Certyfikat testowy",
+      "issuer": "Fixture Issuer",
+      "startYear": 2021,
+      "sortOrder": 0
+    },
+    {
+      "kind": "EDUCATION",
+      "titleEn": "Fixture degree",
+      "titlePl": "Dyplom testowy",
+      "issuer": "Fixture University",
+      "startYear": 2014,
+      "endYear": 2018,
+      "sortOrder": 1
+    }
+  ],
+  "projects": []
+}
