@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "sections": "Sekcje",
+    "language": "Język",
+    "experience": "Doświadczenie",
+    "skills": "Umiejętności",
+    "projects": "Projekty",
+    "contact": "Kontakt",
+    "home": "Strona główna",
+    "skipToExperience": "Przejdź do doświadczenia",
+    "skipToMain": "Przejdź do treści głównej"
+  },
+  "dates": {
+    "to": "–",
+    "present": "obecnie",
+    "toPresent": "– obecnie"
+  },
+  "duration": {
+    "years": "{count, plural, one {# rok} few {# lata} many {# lat} other {# roku}}",
+    "months": "{count, plural, one {# miesiąc} few {# miesiące} many {# miesięcy} other {# miesiąca}}"
+  },
+  "timeline": {
+    "heading": "Przebieg kariery od {year} roku do dziś",
+    "counts": "{roles} w {workplaces}, {current}.",
+    "roles": "{count, plural, one {# stanowisko} few {# stanowiska} many {# stanowisk} other {# stanowiska}}",
+    "workplaces": "{count, plural, one {# miejscu pracy} other {# miejscach pracy}}",
+    "current": "{count, plural, =0 {obecnie żadne} =1 {w tym jedno obecne} few {w tym # obecne} other {w tym # obecnych}}",
+    "employerAtClient": "<org>{employer}</org> dla {client}",
+    "legend": "Każdy pasek pokazuje okres pracy na danym stanowisku. Zielony: zakończone. Bursztynowy: obecne."
+  },
+  "summary": {
+    "heading": "Podsumowanie"
+  },
+  "experience": {
+    "heading": "Doświadczenie",
+    "key": "<term>PASS</term>: stanowisko zakończone. <term>RUNNING</term>: obecne stanowisko.",
+    "client": "Klient: {client}"
+  },
+  "skills": {
+    "heading": "Umiejętności i kwalifikacje",
+    "certifications": "Certyfikaty",
+    "education": "Wykształcenie"
+  },
+  "projects": {
+    "heading": "Projekty",
+    "planned": "Planowany",
+    "inDevelopment": "W trakcie tworzenia",
+    "live": "Działa",
+    "repo": "Kod źródłowy: {name}",
+    "site": "Strona projektu: {name}"
+  },
+  "quality": {
+    "heading": "Jak testowana jest ta strona",
+    "statusPass": "Ten przebieg zakończył się bez błędów.",
+    "statusFail": "W tym przebiegu wykryto problem. Szczegóły są w pełnym przebiegu.",
+    "suites": {
+      "backend": "Testy backendu",
+      "frontend": "Testy frontendu",
+      "browser": "Testy w przeglądarce"
+    },
+    "accessibility": "Testy dostępności",
+    "passed": "{count, plural, one {# zaliczony} few {# zaliczone} many {# zaliczonych} other {# zaliczonego}}",
+    "failed": "{count, plural, one {# nieudany} few {# nieudane} many {# nieudanych} other {# nieudanego}}",
+    "skipped": "{count, plural, one {# pominięty} few {# pominięte} many {# pominiętych} other {# pominiętego}}",
+    "coverageBackend": "Pokrycie linii backendu",
+    "coverageFrontend": "Pokrycie linii frontendu",
+    "date": "Data",
+    "oldRun": "Ten wynik pochodzi ze starszego przebiegu.",
+    "intro": "Każda zmiana na tej stronie przechodzi przez testy automatyczne. Oto najnowsze wyniki.",
+    "statusOtherCheck": "Wszystkie testy przeszły, ale inna automatyczna kontrola się nie powiodła.",
+    "fullRun": "Pełny przebieg",
+    "runLink": "Zobacz przebieg {commit} na GitHubie"
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "intro": "Napisz do mnie przez formularz.",
+    "introLinkedin": "Napisz do mnie przez formularz albo znajdź mnie na <link>LinkedInie</link>.",
+    "email": "Możesz też napisać na adres <link>{email}</link>.",
+    "allRequired": "Wszystkie pola są wymagane.",
+    "name": "Imię i nazwisko",
+    "emailLabel": "E-mail",
+    "message": "Wiadomość",
+    "honeypot": "Numer referencyjny",
+    "retention": "Wiadomość przechowuję do 12 miesięcy, żeby móc na nią odpowiedzieć. <link>Informacja o prywatności</link>",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie",
+    "sent": "Wiadomość została wysłana.",
+    "noscript": "Ten formularz wymaga JavaScriptu, który jest wyłączony w Twojej przeglądarce. Włącz go, aby wysłać wiadomość.",
+    "errors": {
+      "nameRequired": "Podaj imię i nazwisko.",
+      "nameTooLong": "Imię i nazwisko może mieć najwyżej 100 znaków.",
+      "nameRejected": "Serwer nie przyjął tego imienia i nazwiska. Sprawdź je i spróbuj ponownie.",
+      "emailRequired": "Podaj adres e-mail.",
+      "emailInvalid": "Podaj adres e-mail w postaci nazwa@example.com.",
+      "emailTooLong": "Adres e-mail może mieć najwyżej 254 znaki.",
+      "emailRejected": "Serwer nie przyjął tego adresu e-mail. Sprawdź go i spróbuj ponownie.",
+      "messageRequired": "Wpisz wiadomość.",
+      "messageTooShort": "Wiadomość musi mieć co najmniej 10 znaków.",
+      "messageTooLong": "Wiadomość może mieć najwyżej 5000 znaków. Liczba znaków w Twojej wiadomości: {count}.",
+      "messageRejected": "Serwer nie przyjął tej wiadomości. Sprawdź ją i spróbuj ponownie."
+    },
+    "failure": {
+      "rateLimitedWait": "Wysłano zbyt wiele wiadomości. Twoja wiadomość nie została wysłana. Spróbuj ponownie za {wait}.",
+      "rateLimited": "Wysłano zbyt wiele wiadomości. Twoja wiadomość nie została wysłana. Spróbuj ponownie później.",
+      "seconds": "{count, plural, one {# sekundę} few {# sekundy} many {# sekund} other {# sekundy}}",
+      "minutes": "{count, plural, one {# minutę} few {# minuty} many {# minut} other {# minuty}}",
+      "hours": "{count, plural, one {# godzinę} few {# godziny} many {# godzin} other {# godziny}}",
+      "network": "Wiadomość nie została wysłana z powodu problemu z połączeniem. Wpisany tekst pozostał w formularzu. Sprawdź połączenie i spróbuj ponownie.",
+      "server": "Wiadomość nie została wysłana z powodu problemu na serwerze. Wpisany tekst pozostał w formularzu. Spróbuj ponownie za kilka minut."
+    }
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "privacy": "Informacja o prywatności"
+  },
+  "privacy": {
+    "title": "Informacja o prywatności",
+    "description": "Co dzieje się z wiadomościami wysłanymi przez formularz kontaktowy na tej stronie.",
+    "intro": "Ta informacja wyjaśnia, co dzieje się z Twoimi danymi, gdy korzystasz z formularza kontaktowego na tej stronie. Przekazuję ją na podstawie art. 13 RODO.",
+    "controllerHeading": "Kto odpowiada za dane",
+    "controller": "Administratorem danych jest {name}.",
+    "contactEmail": "W sprawach prywatności napisz na adres <link>{email}</link>.",
+    "contactGap": "Adres e-mail do spraw prywatności nie został jeszcze opublikowany.",
+    "contactGapLinkedin": "Adres e-mail do spraw prywatności nie został jeszcze opublikowany. Do tego czasu możesz skontaktować się z administratorem na <link>LinkedIn</link>.",
+    "purposeHeading": "W jakim celu używam danych",
+    "purpose": "Twoich danych używam wyłącznie po to, aby przeczytać zapytanie i na nie odpowiedzieć.",
+    "basisHeading": "Podstawa prawna",
+    "basis": "Podstawą prawną jest art. 6 ust. 1 lit. f RODO, czyli prawnie uzasadniony interes polegający na odpowiadaniu osobom, które się ze mną kontaktują.",
+    "voluntary": "Podanie danych jest dobrowolne, ale bez nich nie można wysłać formularza ani otrzymać odpowiedzi.",
+    "storedHeading": "Co jest przechowywane",
+    "stored": "Imię i nazwisko, adres e-mail i treść wiadomości, język strony oraz czas wysłania wiadomości.",
+    "notIp": "Adres IP nie jest zapisywany razem z wiadomością. Jest tylko krótko przechowywany w pamięci, aby ograniczyć wielokrotne wysyłanie.",
+    "retentionHeading": "Jak długo przechowuję dane",
+    "retention": "Wiadomości są usuwane po 12 miesiącach.",
+    "rightsHeading": "Twoje prawa",
+    "rights": "Możesz żądać dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania. Możesz też wnieść sprzeciw wobec ich wykorzystania. Nie stosuję zautomatyzowanego podejmowania decyzji ani profilowania.",
+    "complaint": "Masz prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (<link>PUODO</link>).",
+    "cookiesHeading": "Pliki cookie",
+    "cookies": "Ta strona nie używa plików cookie ani narzędzi analitycznych."
+  },
+  "metadata": {
+    "unavailableTitle": "Strona chwilowo niedostępna"
+  },
+  "error": {
+    "title": "Ta strona jest chwilowo niedostępna",
+    "body": "Nie udało się wczytać treści strony. Problem nie leży po Twojej stronie. Spróbuj ponownie za kilka minut.",
+    "retry": "Spróbuj ponownie"
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "body": "Pod tym adresem nie ma żadnej strony.",
+    "home": "Przejdź na stronę główną"
+  }
+}

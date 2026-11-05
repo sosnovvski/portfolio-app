@@ -1,0 +1,33 @@
+/* Tailwind without preflight: the approved mockup relies on browser default margins and lists. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-pass: var(--pass);
+  --color-running: var(--running);
+  --color-link: var(--link);
+  --color-fail: var(--fail);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+}
+
+:root {
+  --bg: #0f2229;
+  --surface: #17303a;
+  --line: #2f505c;
+  --text: #efeadf;
+  --muted: #a9b8ba;
+  --pass: #7fe0b0;
+  --running: #f2b84b;
+  --link: #a9c1ff;
+  --fail: #ff9c8f;
+  --sans: var(--font-schibsted), system-ui, sans-serif;
+  --mono: var(--font-martian), ui-monospace, monospace;
+  --gutter: 11rem;
+}

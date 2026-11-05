@@ -1,0 +1,202 @@
+{
+  "profile": {
+    "fullName": "Kamil Sosnowski",
+    "headlineEn": "Senior QA Automation / Software Engineer / Test Lead",
+    "headlinePl": "Senior QA Automation / Software Engineer / Test Lead",
+    "summaryEn": "Senior test automation engineer who builds scalable automation frameworks for web and API applications. I specialize in Java, Selenium WebDriver and REST Assured, and integrate automated tests into CI/CD pipelines to ensure fast and reliable releases. I focus on maintainable test architecture, clean code principles and long-term quality strategy.\n\nMy work helps teams reduce regression time, increase deployment confidence and improve overall product stability.\n\nI am particularly interested in test architecture, quality engineering and continuous delivery practices.",
+    "summaryPl": "Starszy inżynier automatyzacji testów, który buduje skalowalne frameworki automatyzacji dla aplikacji webowych i API. Specjalizuję się w Javie, Selenium WebDriver i REST Assured, a testy automatyczne włączam do potoków CI/CD, aby wydania były szybkie i niezawodne. Stawiam na łatwą w utrzymaniu architekturę testów, zasady czystego kodu i długofalową strategię jakości.\n\nMoja praca pomaga zespołom skracać czas testów regresji, zwiększać pewność przy wdrożeniach i poprawiać ogólną stabilność produktu.\n\nSzczególnie interesuje mnie architektura testów, inżynieria jakości i praktyki ciągłego dostarczania.",
+    "locationEn": "Gdańsk, Poland",
+    "locationPl": "Gdańsk",
+    "linkedinUrl": "https://www.linkedin.com/in/kamil-sosnowski-tester/",
+    "githubUrl": null,
+    "publicEmail": null
+  },
+  "experiences": [
+    {
+      "employer": "Self-employed",
+      "roleEn": "Senior Test Automation Engineer",
+      "rolePl": "Senior Test Automation Engineer",
+      "start": "2022-01",
+      "end": null,
+      "published": true,
+      "achievements": []
+    },
+    {
+      "employer": "EPAM Systems",
+      "roleEn": "Software QA Team Lead",
+      "rolePl": "Software QA Team Lead",
+      "locationEn": "Gdańsk, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2021-04",
+      "end": "2022-01",
+      "published": true,
+      "achievements": []
+    },
+    {
+      "employer": "EPAM Systems",
+      "roleEn": "Test Automation Engineer",
+      "rolePl": "Test Automation Engineer",
+      "locationEn": "Gdańsk, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2021-02",
+      "end": "2021-04",
+      "published": true,
+      "achievements": []
+    },
+    {
+      "employer": "ALTEN",
+      "client": "Thales",
+      "roleEn": "Software Validation Engineer",
+      "rolePl": "Software Validation Engineer",
+      "locationEn": "Gdańsk, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2020-06",
+      "end": "2021-02",
+      "published": true,
+      "achievements": [
+        { "textEn": "Automated testing processes", "textPl": "Automatyzacja procesów testowych" },
+        { "textEn": "Refactored and maintained existing tests", "textPl": "Refaktoryzacja i utrzymanie istniejących testów" },
+        { "textEn": "Performed code reviews", "textPl": "Code review" },
+        { "textEn": "Reported bugs, ran retests and created test cases", "textPl": "Zgłaszanie błędów, retesty i tworzenie przypadków testowych" }
+      ]
+    },
+    {
+      "employer": "Jit Team",
+      "client": "LPP",
+      "roleEn": "Test Automation Engineer",
+      "rolePl": "Test Automation Engineer",
+      "locationEn": "Gdańsk area, Poland",
+      "locationPl": "Gdańsk i okolice",
+      "start": "2019-06",
+      "end": "2020-05",
+      "published": true,
+      "achievements": [
+        { "textEn": "Automated testing processes", "textPl": "Automatyzacja procesów testowych" },
+        { "textEn": "Refactored and maintained existing tests", "textPl": "Refaktoryzacja i utrzymanie istniejących testów" },
+        { "textEn": "Developed solutions for fetching data from a data table", "textPl": "Rozwiązania do pobierania danych z tabeli danych" },
+        { "textEn": "Created Jenkins pipelines", "textPl": "Tworzenie potoków w Jenkinsie" },
+        { "textEn": "Performed code reviews", "textPl": "Code review" },
+        { "textEn": "Reported bugs, ran smoke tests and retests", "textPl": "Zgłaszanie błędów, testy dymne i retesty" },
+        { "textEn": "Created test cases and test scenarios", "textPl": "Tworzenie przypadków i scenariuszy testowych" }
+      ]
+    },
+    {
+      "employer": "Develocraft",
+      "client": "Partner CRLS",
+      "roleEn": "Test Automation Engineer",
+      "rolePl": "Test Automation Engineer",
+      "locationEn": "Gdańsk, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2019-01",
+      "end": "2019-06",
+      "published": true,
+      "achievements": [
+        { "textEn": "Created a test plan from scratch", "textPl": "Stworzenie planu testów od podstaw" },
+        { "textEn": "Covered most of the application's functionality with automated tests, using Java and Selenium with Page Object Model and Page Factory", "textPl": "Pokrycie większości funkcji aplikacji testami automatycznymi w Javie i Selenium, z użyciem Page Object Model i Page Factory" },
+        { "textEn": "Optimized automated tests around the project's main use case", "textPl": "Optymalizacja testów automatycznych pod kątem głównego przypadku użycia w projekcie" },
+        { "textEn": "Worked with Jenkins for automated tests", "textPl": "Praca z Jenkinsem w zakresie testów automatycznych" },
+        { "textEn": "Ran smoke and acceptance tests", "textPl": "Testy dymne i akceptacyjne" }
+      ]
+    },
+    {
+      "employer": "Aplitt sp. z o.o.",
+      "roleEn": "Junior Tester",
+      "rolePl": "Młodszy tester",
+      "locationEn": "Gdańsk, Poland",
+      "locationPl": "Gdańsk",
+      "start": "2018-02",
+      "end": "2018-12",
+      "published": true,
+      "achievements": [
+        { "textEn": "Wrote automated web tests with Java, Maven and Selenium", "textPl": "Pisanie automatycznych testów webowych w Javie, Mavenie i Selenium" },
+        { "textEn": "Wrote automated mobile tests with Java, Maven and Appium", "textPl": "Pisanie automatycznych testów mobilnych w Javie, Mavenie i Appium" },
+        { "textEn": "Wrote scripts for testing a database after migration (MSSQL)", "textPl": "Pisanie skryptów do testowania bazy danych po migracji (MSSQL)" },
+        { "textEn": "Ran performance and integration tests", "textPl": "Testy wydajnościowe i integracyjne" },
+        { "textEn": "Ran acceptance tests with the client", "textPl": "Testy akceptacyjne z klientem" },
+        { "textEn": "Created test cases", "textPl": "Tworzenie przypadków testowych" }
+      ]
+    },
+    {
+      "employer": "Jabil",
+      "roleEn": "Junior Test Engineer, internship",
+      "rolePl": "Młodszy inżynier testu, praktyki",
+      "start": "2017-07",
+      "end": "2017-09",
+      "published": true,
+      "achievements": [
+        { "textEn": "Worked with AOI, FCT and HVT testers", "textPl": "Praca z testerami AOI, FCT i HVT" },
+        { "textEn": "Created and maintained scripts and programs using JabilTest", "textPl": "Tworzenie i utrzymywanie skryptów i programów z użyciem JabilTest" },
+        { "textEn": "Wrote a C# application supporting the work of test engineers", "textPl": "Pisanie aplikacji w C# wspomagającej pracę inżynierów testu" },
+        { "textEn": "Soldered components on PCBs", "textPl": "Lutowanie komponentów na płytach PCB" }
+      ]
+    }
+  ],
+  "skillGroups": [
+    {
+      "nameEn": "Test automation",
+      "namePl": "Automatyzacja testów",
+      "sortOrder": 0,
+      "skills": ["Java", "Selenium WebDriver", "Selenide", "REST Assured", "Appium", "Page Object Model"]
+    },
+    {
+      "nameEn": "CI/CD",
+      "namePl": "CI/CD",
+      "sortOrder": 1,
+      "skills": ["Jenkins", "Azure Pipelines"]
+    },
+    {
+      "nameEn": "Build tools",
+      "namePl": "Narzędzia budowania",
+      "sortOrder": 2,
+      "skills": ["Maven", "Gradle"]
+    }
+  ],
+  "credentials": [
+    {
+      "kind": "CERTIFICATION",
+      "titleEn": "End-to-End JavaScript Testing with Cypress.io",
+      "titlePl": "End-to-End JavaScript Testing with Cypress.io",
+      "issuer": "LinkedIn Learning",
+      "startYear": 2021,
+      "sortOrder": 0
+    },
+    {
+      "kind": "CERTIFICATION",
+      "titleEn": "DevOps Foundations: Continuous Delivery/Continuous Integration",
+      "titlePl": "DevOps Foundations: Continuous Delivery/Continuous Integration",
+      "issuer": "LinkedIn Learning",
+      "startYear": 2021,
+      "sortOrder": 1
+    },
+    {
+      "kind": "CERTIFICATION",
+      "titleEn": "Advanced Selenium: 3 Synchronization Strategies",
+      "titlePl": "Advanced Selenium: 3 Synchronization Strategies",
+      "issuer": "LinkedIn Learning",
+      "startYear": 2021,
+      "sortOrder": 2
+    },
+    {
+      "kind": "EDUCATION",
+      "titleEn": "Engineer's degree, Electronics and Telecommunications",
+      "titlePl": "Inżynier, elektronika i telekomunikacja",
+      "issuer": "Uniwersytet Morski w Gdyni",
+      "startYear": 2014,
+      "endYear": 2018,
+      "sortOrder": 3
+    }
+  ],
+  "projects": [
+    {
+      "slug": "portfolio",
+      "nameEn": "This portfolio",
+      "namePl": "To portfolio",
+      "summaryEn": "The site you are reading, with its own automated tests.",
+      "summaryPl": "Strona, którą właśnie czytasz, z własnymi testami automatycznymi.",
+      "status": "IN_DEVELOPMENT",
+      "tech": ["Spring Boot", "PostgreSQL", "Next.js", "Playwright"],
+      "sortOrder": 0,
+      "published": true
+    }
+  ]
+}
